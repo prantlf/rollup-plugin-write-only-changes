@@ -1,0 +1,78 @@
+{
+  "name": "rollup-plugin-write-only-changes",
+  "version": "1.0.0",
+  "description": "A Rollup plugin for writing files to the output directoriy only if their contents actually changed.",
+  "author": "Ferdinand Prantl <prantlf@gmail.com> (http://prantl.tk)",
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/prantlf/rollup-plugin-write-only-changes/blob/master/LICENSE"
+    }
+  ],
+  "homepage": "http://prantlf.github.com/rollup-plugin-write-only-changes/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prantlf/rollup-plugin-write-only-changes.git"
+  },
+  "bugs": {
+    "url": "http://github.com/prantlf/rollup-plugin-write-only-changes/issues"
+  },
+  "type": "module",
+  "main": "lib/index.cjs",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    "require": "./lib/index.cjs",
+    "import": "./lib/index.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">= 14.8"
+  },
+  "scripts": {
+    "prepare": "rollup -c",
+    "lint": "denolint && tsc --noEmit test/types.ts",
+    "check": "teru test/*.cjs && teru-esm test/*.js",
+    "test": "denolint && tsc --noEmit test/types.ts && teru test/*.cjs && teru-esm test/*.js"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/github",
+        {
+          "failComment": false
+        }
+      ],
+      "@semantic-release/git"
+    ]
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^18.16.3",
+    "denolint": "^2.0.9",
+    "rollup": "^3.21.4",
+    "tehanu": "^1.0.1",
+    "tehanu-repo-coco": "^1.0.0",
+    "tehanu-teru": "^1.0.0",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "rollup": "^1.20 || ^2 || ^3"
+  },
+  "keywords": [
+    "rollup",
+    "plugin",
+    "rollup-plugin",
+    "watch",
+    "changes",
+    "write"
+  ]
+}

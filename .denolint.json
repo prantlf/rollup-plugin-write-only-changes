@@ -1,0 +1,11 @@
+{
+  "files": {
+    "exclude": [
+      "test/fixtures",
+      "test/snapshots"
+    ]
+  },
+  "rules": {
+    "tags": ["recommended"]
+  }
+}
