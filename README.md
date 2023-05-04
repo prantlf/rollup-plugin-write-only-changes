@@ -4,7 +4,9 @@
  ![Dependency status](https://img.shields.io/librariesio/release/npm/rollup-plugin-write-only-changes)
 ](https://www.npmjs.com/package/rollup-plugin-write-only-changes)
 
-A [Rollup]  Rollup plugin for writing files to the output directoriy only if their contents actually changed.
+A [Rollup] plugin for writing files to the output directory only if their contents actually changed.
+
+[Rollup] rewrites all files in the output directory on each build. If the output directory is watched by other tools, the rewriting will cause unnecessary change events triggered. This plugin prevents [Rollup] from rewriting an output file, if the file already exists in the output directory and if it contains the same contents.
 
 ## Requirements
 
