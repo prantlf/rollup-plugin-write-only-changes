@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-write-only-changes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Rollup plugin for writing files to the output directoriy only if their contents actually changed.",
   "author": "Ferdinand Prantl <prantlf@gmail.com> (http://prantl.tk)",
   "license": "MIT",
