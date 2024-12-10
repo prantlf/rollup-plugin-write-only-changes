@@ -1,4 +1,4 @@
-const { ok, strictEqual } = require('assert')
+const { ok, strictEqual } = require('node:assert')
 const test = require('tehanu')(__filename)
 const exported = require('..')
 

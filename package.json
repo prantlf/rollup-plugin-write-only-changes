@@ -34,38 +34,21 @@
   },
   "scripts": {
     "prepare": "rollup -c",
-    "lint": "denolint && tsc --noEmit test/types.ts",
+    "lint": "biome lint lib test && tsc --noEmit test/types.ts",
     "check": "teru test/*.cjs && teru-esm test/*.js",
-    "test": "denolint && tsc --noEmit test/types.ts && teru test/*.cjs && teru-esm test/*.js"
-  },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      [
-        "@semantic-release/github",
-        {
-          "failComment": false
-        }
-      ],
-      "@semantic-release/git"
-    ]
+    "test": "biome lint lib test && tsc --noEmit test/types.ts && teru test/*.cjs && teru-esm test/*.js"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@types/node": "^18.16.3",
-    "denolint": "^2.0.9",
-    "rollup": "^3.21.4",
+    "@biomejs/biome": "^1.8.3",
+    "@types/node": "^22.10.1",
+    "rollup": "^4.28.1",
     "tehanu": "^1.0.1",
-    "tehanu-repo-coco": "^1.0.0",
-    "tehanu-teru": "^1.0.0",
-    "typescript": "^5.0.4"
+    "tehanu-repo-coco": "^1.0.1",
+    "tehanu-teru": "^1.0.1",
+    "typescript": "^5.7.2"
   },
   "peerDependencies": {
-    "rollup": "^1.20 || ^2 || ^3"
+    "rollup": "^1.20 || ^2 || ^3 || ^4"
   },
   "keywords": [
     "rollup",

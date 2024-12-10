@@ -1,5 +1,5 @@
 import tehanu from 'tehanu'
-import { strictEqual } from 'assert'
+import { strictEqual } from 'node:assert'
 import { writeOnlyChanges } from '../lib/index.js'
 
 const test = tehanu(import.meta.url)
